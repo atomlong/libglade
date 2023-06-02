@@ -11,15 +11,21 @@ makedepends=('python2' 'pkgconfig')
 optdepends=('python2: libglade-convert script')
 install=glade.install
 source=(https://download.gnome.org/sources/${pkgname}/2.6/${pkgname}-${pkgver}.tar.bz2
-	libglade-2.0.1-nowarning.patch)
+	libglade-2.0.1-nowarning.patch
+	config.guess
+	config.sub)
 url="http://www.gnome.org"
 sha256sums=('64361e7647839d36ed8336d992fd210d3e8139882269bed47dc4674980165dec'
-            '423c12af1c73442caa851a0b8db33b00fa4b778b1b422a4e8ac33d121d043008')
+            '423c12af1c73442caa851a0b8db33b00fa4b778b1b422a4e8ac33d121d043008'
+			'bb14470dba3adf469b6e683307b783172b571abca13e7f5a77a4c94ea07b3811'
+			'b45ba96fa578cfca60ed16e27e689f10812c3f946535e779229afe7a840763e6')
 options=(!lto)
 
 prepare() {
   cd $pkgname-$pkgver
   patch -Np1 -i ../libglade-2.0.1-nowarning.patch
+  cp -vf ${srcdir}/config.guess ./
+  cp -vf ${srcdir}/config.sub   ./
 }
 
 build() {

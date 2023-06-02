@@ -14,7 +14,11 @@ pkgbase = libglade
 	options = !lto
 	source = https://download.gnome.org/sources/libglade/2.6/libglade-2.6.4.tar.bz2
 	source = libglade-2.0.1-nowarning.patch
+	source = config.guess
+	source = config.sub
 	sha256sums = 64361e7647839d36ed8336d992fd210d3e8139882269bed47dc4674980165dec
 	sha256sums = 423c12af1c73442caa851a0b8db33b00fa4b778b1b422a4e8ac33d121d043008
+	sha256sums = bb14470dba3adf469b6e683307b783172b571abca13e7f5a77a4c94ea07b3811
+	sha256sums = b45ba96fa578cfca60ed16e27e689f10812c3f946535e779229afe7a840763e6
 
 pkgname = libglade
